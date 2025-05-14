@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beats, Choices, & Neon Dreams: A Producer's Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark blue-gray */
+            color: #E5E7EB; /* Light gray */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .chapter-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem; /* Responsive font size */
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #38BDF8; /* Sky blue */
+        }
+        .narrative-text {
+            font-size: 1.125rem; /* Responsive font size */
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .album-cover {
+            max-width: 300px;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 1rem auto; /* Center album art */
+            display: block;
+            /* Future: Add click-to-play audio interaction here */
+        }
+        .what-if-container {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #38BDF8; /* Sky blue */
+            padding: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+        }
+        .what-if-buttons button {
+            background-color: #38BDF8; /* Sky blue */
+            color: #111827; /* Dark blue-gray */
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .what-if-buttons button:hover {
+            background-color: #0EA5E9; /* Darker sky blue */
+            transform: translateY(-2px);
+        }
+        .what-if-buttons button.alternative-path-btn {
+            background-color: #F472B6; /* Pink */
+        }
+         .what-if-buttons button.alternative-path-btn:hover {
+            background-color: #EC4899; /* Darker Pink */
+        }
+        .alternative-text {
+            display: none; /* Hidden by default */
+            background-color: rgba(244, 114, 182, 0.1); /* Light pink tint */
+            border-left: 4px solid #F472B6; /* Pink */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.375rem;
+        }
+        .chapter {
+            padding: 4rem 1rem; /* Responsive padding */
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0; /* For fade-in animation */
+            transform: translateY(20px); /* For fade-in animation */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            position: relative; /* For potential parallax children */
+        }
+        .chapter.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Simple Parallax Background Example for one chapter */
+        #chapter-neon-dreams {
+            background-image: url('Neon Dreams.jpg'); /* Ensure this path is correct or use a placeholder */
+            background-attachment: fixed; /* This creates the parallax effect */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white; /* Adjust text color for visibility on background */
+        }
+        #chapter-neon-dreams .narrative-text, #chapter-neon-dreams .chapter-title {
+            background-color: rgba(0,0,0,0.6); /* Add a semi-transparent overlay for text readability */
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        /* Styling for the upcoming album section */
+        .upcoming-album-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #F472B6; /* Pink for upcoming */
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <header class="text-center py-12 bg-gray-800">
+        <h1 class="text-4xl md:text-5xl font-bold" style="font-family: 'Orbitron', sans-serif; color: #38BDF8;">Beats, Choices, & Neon Dreams</h1>
+        <p class="text-xl text-gray-400 mt-2">A Producer's Journey</p>
+    </header>
+
+    <main>
+        <section id="chapter-spark" class="chapter">
+            <h2 class="chapter-title">The Spark</h2>
+            <p class="narrative-text">
+                I started making music when I was in 11th grade. At that time I didn't know anything about how to make music and just like everything I decided to teach myself... I stumbled upon Ableton that stuck with me purely out of its ability to have vibrant colors...
+                </p>
+            <div class="what-if-container">
+                <p class="font-semibold mb-2">What If #1: The DAW Decision</p>
+                <div class="what-if-buttons">
+                    <button onclick="showAlternative('daw-decision-alt', this)">I chose Ableton (Actual)</button>
+                    <button class="alternative-path-btn" onclick="showAlternative('daw-decision-alt', this, true)">What if I hadn't chosen Ableton?</button>
+                </div>
+                <div id="daw-decision-alt" class="alternative-text">
+                    I might have picked a different DAW like FL Studio or Logic. Maybe the workflow wouldn't have clicked the same way... Or, who knows, maybe another interface would have unlocked a different style altogether! Ableton's visual appeal definitely helped me get comfortable quickly.
+                </div>
+            </div>
+            <p class="narrative-text">
+                I started experimenting with the sample packs... My first computer was my iMac from mid 2010s... I found distrokid... I met my classmate who was new to the school...
+                </p>
+            <div class="what-if-container">
+                <p class="font-semibold mb-2">What If #2: The Solo Start</p>
+                <div class="what-if-buttons">
+                     <button onclick="showAlternative('solo-start-alt', this)">We decided to collaborate (Actual)</button>
+                     <button class="alternative-path-btn" onclick="showAlternative('solo-start-alt', this, true)">What if we hadn't included his songs in my first album?</button>
+                </div>
+                <div id="solo-start-alt" class="alternative-text">
+                    If I'd released RAGE completely solo first, he might have seen its initial buzz and then decided to jump on board... Our collaboration might have taken a different shape...
+                </div>
+            </div>
+             </section>
+
+        <section id="chapter-rage" class="chapter">
+            <h2 class="chapter-title">RAGE</h2>
+            <img src="rage.jpg" alt="RAGE Album Cover" class="album-cover">
+            <p class="narrative-text">
+                The album was hard hitting beats, no vocals, and he came up with two rock and roll instrumentals... That Album was Called RAGE. It was officially out on March 4th, 2022. That album actually did pretty well... hundreds for our first album ever... Our friends were ecstatic, our families got to know about this...
+            </p>
+            <div class="what-if-container">
+                <p class="font-semibold mb-2">What If #3: No Musical Ambition?</p>
+                <div class="what-if-buttons">
+                    <button onclick="showAlternative('no-ambition-alt', this)">We continued (Actual)</button>
+                    <button class="alternative-path-btn" onclick="showAlternative('no-ambition-alt', this, true)">What if I didn't follow my music idea from the start?</button>
+                </div>
+                <div id="no-ambition-alt" class="alternative-text">
+                    Honestly, if I hadn't pursued this back in 11th grade, it's simple – none of this would exist... This whole chapter of my life... it just wouldn't have happened.
+                </div>
+            </div>
+            </section>
+
+        <section id="chapter-heartbreak" class="chapter">
+            <h2 class="chapter-title">HEARTBREAK & The Whoopty Phenomenon</h2>
+            <img src="hbreak.jpg" alt="HEARTBREAK Album Cover" class="album-cover">
+            <p class="narrative-text">
+                I sampled the vocal chop used in Whoopty... we both made our versions. He came up with an amazing beat and we decided to go for his. It was named Whoopty - Remix... That song went on to become the most streamed song... with over 500k plays on Spotify and over a million on Youtube! We were shocked. We were committed and inspired.
+            </p>
+            <div class="what-if-container">
+                <p class="font-semibold mb-2">What If #4: No Whoopty Remix?</p>
+                <div class="what-if-buttons">
+                    <button onclick="showAlternative('no-whoopty-alt', this)">'Whoopty - Remix' was a game-changer (Actual)</button>
+                    <button class="alternative-path-btn" onclick="showAlternative('no-whoopty-alt', this, true)">What if we didn't make Whoopty Remix?</button>
+                </div>
+                <div id="no-whoopty-alt" class="alternative-text">
+                    Without 'Whoopty - Remix,' HEARTBREAK would have been a very different album... Our growth would have been much slower...
+                </div>
+            </div>
+            <div class="what-if-container">
+                 <p class="font-semibold mb-2">What If #5: No Friend/Collaborator?</p>
+                <div class="what-if-buttons">
+                    <button onclick="showAlternative('no-friend-alt', this)">Our collaboration was key (Actual)</button>
+                    <button class="alternative-path-btn" onclick="showAlternative('no-friend-alt', this, true)">What if I didn't meet my friend?</button>
+                </div>
+                <div id="no-friend-alt" class="alternative-text">
+                    No, definitely not. Without him, I'd probably still be making music, but I'd likely be stuck in the tens or hundreds of plays...
+                </div>
+            </div>
+            </section>
+
+        <section id="chapter-setbacks" class="chapter">
+            <h2 class="chapter-title">Setbacks & Humility</h2>
+            <img src="liez.png" alt="LIEz Album Cover" class="album-cover">
+            <p class="narrative-text">
+                After this I released a single called LIEz on April 30, 2022... that didn't do well. I admit I got carried away... Then we sampled The Last of us theme and that went well... I also released a song later that was taken down due to copyright called LIVING LIFE IN THE NIGHT.
+            </p>
+            <div class="what-if-container">
+                <p class="font-semibold mb-2">What If #6: Losing Motivation After LIEz?</p>
+                <div class="what-if-buttons">
+                    <button onclick="showAlternative('motivation-loss-alt', this)">I got humbled and continued (Actual)</button>
+                    <button class="alternative-path-btn" onclick="showAlternative('motivation-loss-alt', this, true)">What if I lost all motivation after LIEz?</button>
+                </div>
+                <div id="motivation-loss-alt" class="alternative-text">
+                    If LIEz had completely crushed my motivation, I might have stopped producing for a while... It would have been a significant setback...
+                </div>
+            </div>
+            </section>
+
+        <section id="chapter-grind" class="chapter">
+            <h2 class="chapter-title">The Grind & Shifting Tides</h2>
+            <p class="narrative-text">
+                After that I got busy and released less often but still thrilled to release any way. Here are the rest of the releases...
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 max-w-4xl mx-auto">
+                <img src="heights.jpg" alt="HEIGHTS Album Cover" class="album-cover object-cover w-full h-full">
+                <img src="bhxxdworld.jpg" alt="A NEW WORLD Album Cover" class="album-cover object-cover w-full h-full">
+                <img src="eclate.jpg" alt="eclate Album Cover" class="album-cover object-cover w-full h-full">
+                <img src="bubblez.jpg" alt="BUBBLEZ! Album Cover" class="album-cover object-cover w-full h-full">
+                <img src="r2.jpg" alt="RAGE PT.II Album Cover" class="album-cover object-cover w-full h-full">
+                <img src="https://placehold.co/300x300/1F2937/E5E7EB?text=THE+GODFATHER" alt="THE GODFATHER" class="album-cover object-cover w-full h-full">
+                 <img src="https://placehold.co/300x300/1F2937/E5E7EB?text=REMORSE" alt="REMORSE" class="album-cover object-cover w-full h-full">
+            </div>
+            </section>
+
+        <section id="chapter-pause" class="chapter">
+            <h2 class="chapter-title">The Pause & The Promise</h2>
+            <img src="Dragon Ball.png" alt="DRAGON BALL Album Cover" class="album-cover">
+            <p class="narrative-text">
+                I stopped releasing after DRAGON BALL. cause I just lost the motivation, I was tired and I had less free time... I have 3500 monthly listeners on spotify, 500k plays of WHOOPTY Remix and over a million on Youtube... But I planned to release more in the future... I promised myself to never give up...
+            </p>
+            <div class="what-if-container">
+                <p class="font-semibold mb-2">What If #7: Not Continuing After May 2024?</p>
+                <div class="what-if-buttons">
+                    <button onclick="showAlternative('not-continuing-alt', this)">I planned to release more (Actual)</button>
+                    <button class="alternative-path-btn" onclick="showAlternative('not-continuing-alt', this, true)">What if I didn't have the thought to continue?</button>
+                </div>
+                <div id="not-continuing-alt" class="alternative-text">
+                    If that thought to continue... wasn't there? I would probably have let it all fade... This 'NEON DREAMS' album cover wouldn't exist...
+                </div>
+            </div>
+            </section>
+
+        <section id="chapter-neon-dreams" class="chapter"> <h2 class="chapter-title">NEON DREAMS</h2>
+            <img src="Neon Dreams.jpg" alt="NEON DREAMS Album Cover" class="album-cover">
+            <p class="narrative-text">
+                I decided to come back stronger when I have time, when I feel better. I promised to never stop. "NEON DREAMS" is the upcoming project, a testament to that promise.
+                </p>
+            <p class="upcoming-album-title">The journey continues...</p>
+            </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 bg-gray-800">
+        <p>&copy; 2024 Your Name Here. Memoir Project.</p>
+        </footer>
+
+    <script>
+        // JavaScript for "What If" functionality and simple scroll animations
+
+        // Store previously active alternative text for each group
+        const activeAlternatives = {};
+
+        function showAlternative(altTextId, clickedButton, isAlternativePath = false) {
+            const altTextElement = document.getElementById(altTextId);
+            const buttonContainer = clickedButton.parentElement;
+            const allButtonsInGroup = buttonContainer.querySelectorAll('button');
+
+            // If this alternative text is already visible and triggered by the same type of button, hide it.
+            // Or if it's the "Actual" path and we are clicking an "Actual" button again.
+            if (altTextElement.style.display === 'block' && activeAlternatives[altTextId] === isAlternativePath) {
+                altTextElement.style.display = 'none';
+                activeAlternatives[altTextId] = null; // Clear active state
+                // Reset button styles if needed
+                allButtonsInGroup.forEach(btn => btn.style.opacity = '1');
+                return;
+            }
+            
+            // Show the alternative text
+            altTextElement.style.display = 'block';
+            activeAlternatives[altTextId] = isAlternativePath;
+
+            // Visually distinguish active button / path
+            allButtonsInGroup.forEach(btn => btn.style.opacity = '0.6');
+            clickedButton.style.opacity = '1';
+        }
+
+        // Simple scroll-triggered fade-in animation for chapters
+        const chapters = document.querySelectorAll('.chapter');
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.2 // Trigger when 20% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: unobserve after animation to save resources
+                    // observer.unobserve(entry.target); 
+                } else {
+                    // Optional: remove class if you want animation to re-trigger on scroll away and back
+                    // entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        chapters.forEach(chapter => {
+            observer.observe(chapter);
+        });
+
+        // Note for advanced animations:
+        // For complex parallax, text animations, SVG animations, and synchronized effects,
+        // consider using a library like GSAP (GreenSock Animation Platform).
+        // Example: gsap.to(".element", { x: 100, duration: 1, scrollTrigger: ".chapter" });
+        // Audio integration: Use HTML5 <audio> elements and JavaScript to control playback
+        // (e.g., on album cover click).
+    </script>
+</body>
+</html>
